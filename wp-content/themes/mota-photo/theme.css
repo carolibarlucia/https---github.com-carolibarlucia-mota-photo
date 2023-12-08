@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../motaphoto/fonts/Poppins-Regular.woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('../motaphoto/fonts/SpaceMono.woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+* {
+    font-family: 'SpaceMono';
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.footer {
+    font-family: SpaceMono;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+}
