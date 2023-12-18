@@ -2,10 +2,10 @@
 get_header();
 ?>
 
-<?php 
-get_template_part('contact');
-?>
-
+<div class="hero">
+    <img src="<?php echo get_template_directory_uri() . './images/nathalie-11.jpeg'; ?>">
+    <h1>PHOTOGRAPHE EVENT</h1>
+</div>
 
 <?php
 get_footer();

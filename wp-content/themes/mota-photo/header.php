@@ -12,15 +12,17 @@
 
     <header>
         <div class="header">
+            <div>
             <img class="logo" src="<?php echo get_template_directory_uri() . '../images/Logo.png'; ?>" alt="logo" />
-            <a href="#">ACCUEIL</a>
-
-            <a href="#">A PROPOS</a>
-            <a href="#">CONTACT</a>
             </div>
-
-           
+            <div class  ="menu">
+            <a href="#">ACCUEIL</a>
+            <a href="#">A PROPOS</a>
+            <a id="contact">CONTACT</a>
+            </div>
         </div>
+
+
 
 
     </header>
