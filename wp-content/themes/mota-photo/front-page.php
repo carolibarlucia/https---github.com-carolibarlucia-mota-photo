@@ -8,5 +8,9 @@ get_header();
 </div>
 
 <?php
+get_template_part('archive_mota');
+?>
+
+<?php
 get_footer();
 ?>

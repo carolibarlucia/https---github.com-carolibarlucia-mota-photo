@@ -11,18 +11,17 @@
 <body>
 
     <header>
-        <div class="header">
-            <div>
-            <img class="logo" src="<?php echo get_template_directory_uri() . '../images/Logo.png'; ?>" alt="logo" />
-            </div>
-            <div class  ="menu">
-            <a href="#">ACCUEIL</a>
-            <a href="#">A PROPOS</a>
-            <a id="contact">CONTACT</a>
-            </div>
-        </div>
+        <img class="logo" src="<?php echo get_template_directory_uri() . './images/Logo.png'; ?>">
+        <nav class="header-" role="navigation" aria-label="<?php _e('Menu principal', 'text-domain'); ?>">
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'main-menu',
+                // 'container' => false,
+                // 'walker' => new A11y_Walker_Nav_Menu()
+            ]);
 
-
-
+            get_template_part('contact');
+            ?>
+        </nav>
 
     </header>
