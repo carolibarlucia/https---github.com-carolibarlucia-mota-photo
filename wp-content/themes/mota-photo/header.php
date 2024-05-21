@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="main-container">
 
     <header>
         <img class="logo" src="<?php echo get_template_directory_uri() . './images/Logo.png'; ?>">
@@ -16,11 +16,9 @@
             <?php
             wp_nav_menu([
                 'theme_location' => 'main-menu',
-                // 'container' => false,
-                // 'walker' => new A11y_Walker_Nav_Menu()
             ]);
 
-            get_template_part('contact');
+            get_template_part('/templates/contact');
             ?>
         </nav>
 

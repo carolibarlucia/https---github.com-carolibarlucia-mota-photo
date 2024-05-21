@@ -15,19 +15,19 @@
     $(categorie).change(function () {
       console.log($(this).val());
       categorieValue = $(this).val();
-      processFilter()
+      processFilter();
     });
 
     $(format).change(function () {
       // console.log($(this).val());
       formatValue = $(this).val();
-      processFilter()
+      processFilter();
     });
 
     $(date).change(function () {
       // console.log($(this).val());
       orderValue = $(this).val();
-      processFilter()
+      processFilter();
     });
 
     function processFilter() {
@@ -43,7 +43,7 @@
           order: orderValue,
         },
         success: function (resp) {
-          console.log(resp)
+         
           if ($.trim(resp) !== "") {
             $(".cptcontent").html(resp);
             // console.log(page);
@@ -65,6 +65,9 @@
         data: {
           action: "motaphoto_load_more",
           paged: page,
+          // format: format,
+          // categorie: categorie,
+          // order: order
         },
         success: function (resp) {
           if ($.trim(resp) !== "") {
