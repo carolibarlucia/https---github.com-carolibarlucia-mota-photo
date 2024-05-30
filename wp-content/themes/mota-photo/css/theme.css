@@ -73,7 +73,6 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 962px;
-  
 }
 
 .hero h1 {
@@ -205,16 +204,33 @@ textarea {
   opacity: 0;
 }
 
+.photo-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Poppins";
+  object-fit: cover;
+}
+
 .cptcontent-photo {
   position: relative;
+}
+
+.cptcontent-photo img {
+  height: 60vh;
+  object-fit: cover;
 }
 
 .cptcontent-photo:hover .eye-btn,
 .cptcontent-photo:hover .ct-lightbox {
   opacity: 1;
 }
-
-
 
 .eyes {
   width: 46px !important;
@@ -224,7 +240,6 @@ textarea {
   object-fit: cover !important;
   padding: 2px;
 }
-
 
 /* taxonomy */
 .menu-taxonomy {
@@ -264,7 +279,7 @@ textarea {
   position: absolute;
   right: 10px;
   top: 10px;
-  z-index: 10;
+  z-index: 5;
   opacity: 0;
   cursor: pointer;
 }
@@ -280,15 +295,23 @@ textarea {
 .lightbox {
   position: fixed;
   top: 0;
-  left: 0;
+  left: auto;
+  right: auto;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 20;
+  z-index: 25;
   font-family: "SpaceMono";
   font-size: 14px;
   color: #ffffff;
   overflow: auto;
+}
+
+.lightbox img {
+  left: auto;
+  right: auto;
+  width: 50%;
+  object-fit: cover;
 }
 
 .lightbox__close {
@@ -301,22 +324,17 @@ textarea {
 }
 
 .lightbox__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 10px;
+  left: auto;
+  right: auto;
   justify-content: center;
-  max-width: 60%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  overflow: auto;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .lightbox__container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  left: auto;
+  right: auto;
 }
 
 .lightbox__next,
@@ -340,10 +358,13 @@ textarea {
 }
 
 .underlightbox {
-  display: flex;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  right: auto;
+  left: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Poppins";
 }
 
 /* page single */
@@ -362,7 +383,6 @@ textarea {
 .column2 {
   display: flex;
   flex-direction: column;
-  
 }
 
 .column h2 {
@@ -378,11 +398,11 @@ textarea {
   text-transform: uppercase;
   font-size: 1.2em;
   vertical-align: bottom;
-  
 }
 
 .row img {
-  width: 100%;object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 }
 
 .row2 {
@@ -477,14 +497,4 @@ textarea {
   font-size: 1.2em;
   padding-top: 20px;
   border-top: 1px solid black;
-}
-
-.thumb {
-  width: 25%;
-  height: 50px;
-  object-fit: contain;
-}
-
-.thumb img {
-  width: 50px;
 }

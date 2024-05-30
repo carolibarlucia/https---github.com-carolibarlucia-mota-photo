@@ -11,32 +11,31 @@ $reference = get_field('reference', $post_id);
 
 // Afficher les informations dans votre HTML
 ?>
-<div id="lightboxes" class="lightboxHidden">
-    <button class="lightbox__close"><img src="<?php echo get_template_directory_uri() . '/images/Vector.png'; ?>" /></button>
+<section class="main-container">
+    <div id="lightboxes" class="lightboxHidden">
+        <button class="lightbox__close"><img src="<?php echo get_template_directory_uri() . '/images/Vector.png'; ?>" /></button>
+        <div>
+            <button class="lightbox__prev"><img src="<?php echo get_template_directory_uri() . '/images/Line8.png'; ?>" /> Précédent</button>
+            <button class="lightbox__next">Suivant <img src="<?php echo get_template_directory_uri() . '/images/Line7.png'; ?>" /></button>
+            <div id="photo" class="lightbox__container">
 
-    <div>
-        <button class="lightbox__prev"><img src="<?php echo get_template_directory_uri() . '/images/Line8.png'; ?>" /> Précédent</button>
-        <button class="lightbox__next">Suivant <img src="<?php echo get_template_directory_uri() . '/images/Line7.png'; ?>" /></button>
-        <div class="lightbox__container">
-            <div id="photo">
                 <img id="lightboximage" src="<?php echo esc_url($image_url); ?>" />
             </div>
             <div class="underlightbox">
 
-                <div>
+            <?php echo $reference; ?>
+            <p>   </p>
+	<?php 
+	if (!empty($categories)) {
+		foreach ($categories as $category) {
+			echo $category->name;
+		}
+	}
+	?>
 
-                    <?php echo get_post_meta($post_id, 'reference', true); ?>
 
-                    <?php
-                    if ($categories && !is_wp_error($categories)) {
-                        foreach ($categories as $category) {
-                            echo $category->name . ' ';
-                        }
-                    }
-                    ?>
 
-                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

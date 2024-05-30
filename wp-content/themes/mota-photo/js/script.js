@@ -9,8 +9,8 @@ jq(document).ready(function () {
 
   var contactModal = document.getElementById("contactModal");
   var btnContact = document.querySelectorAll(".idcontact");
-  var contactLink = document.querySelector(".idcontact a");
-  let lightboxes = document.querySelectorAll(".wp-lightbox-container");
+  var contactLink = document.querySelector(".idcontact a p");
+  let lightboxes = document.querySelectorAll(".wp-block-image");
   let btnFullscreen = document.querySelectorAll(".wp-block-image");
   let btnCloseFullscreen = document.querySelectorAll(".close-button");
   let openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
@@ -169,9 +169,11 @@ jq(document).ready(function () {
     const imageData = lightboxes[currentLightboxIndex];
     console.log(imageData.innerHTML)
     // lightboximage.setAttribute("src", imageData.thumbnail);
-    console.log(currentLightboxIndex);
+    // console.log(currentLightboxIndex);
     document.getElementById('photo').innerHTML=imageData.innerHTML
     document.getElementById('lightboxes').classList.remove("lightboxHidden")
+    document.getElementById('lightboxes').classList.remove("cptcontent")
+    document.getElementById('lightboxes').classList.add("lightbox")
   }
 
   next.addEventListener("click", function () {
@@ -191,7 +193,7 @@ jq(document).ready(function () {
   const callback = (mutationList, observer) => {
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
-        lightboxes = document.querySelectorAll(".wp-lightbox-container");
+        lightboxes = document.querySelectorAll(".wp-block-image");
         openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
         closeLightBoxBtn = document.querySelector(".lightbox__close");
         console.log(lightboxes.length);
