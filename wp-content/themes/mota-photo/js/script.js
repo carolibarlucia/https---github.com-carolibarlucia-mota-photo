@@ -20,7 +20,6 @@ jq(document).ready(function () {
   let lightboximage = document.getElementById("lightboximage");
   let next = document.querySelector(".lightbox__next");
   let previous = document.querySelector(".lightbox__prev");
-
   let info = document.getElementById("info");
   let photoinfo = document.querySelectorAll(".photo-info");
   let photoContact = document.querySelector(".btn-contact");
@@ -34,7 +33,7 @@ jq(document).ready(function () {
       console.log("click");
       displayForm();
       console.log(displayForm);
-      e.stopPropagation;
+      e.stopPropagation();
     });
   });
 
@@ -68,21 +67,7 @@ jq(document).ready(function () {
   jq(document).ready(function () {
     // Fonction pour initialiser les gestionnaires d'événements de la lightbox
     function initializeLightbox() {
-      // jq(document).on("click", ".lightbox-trigger", function () {
-      //     open(jq(this).data("index"));
-      // });
-      // jq(document).on("click", ".lightbox__close", function () {
-      //     close();
-      // });
-      // jq(document).on("click", ".lightbox__next", function () {
-      //     slideNext();
-      // });
-      // jq(document).on("click", ".lightbox__prev", function () {
-      //     slidePrevious();
-      // });
-      // Ajoutez ici d'autres gestionnaires d'événements pour les actions associées à la lightbox
     }
-
     // Appeler la fonction pour initialiser les gestionnaires d'événements de la lightbox au chargement de la page
     initializeLightbox();
   });
@@ -102,10 +87,6 @@ jq(document).ready(function () {
       },
 
       success: function (resp) {
-        // console.log(resp);
-        // console.log(resp[currentLightboxIndex]);
-        // lightboximage.setAttribute("src", resp[index].thumbnail);
-        // info.innerHTML = resp[index].info;
         lightboxes = resp;
         currentLightboxIndex = i;
         setLightboxInfo();
@@ -156,9 +137,6 @@ jq(document).ready(function () {
 
   function setLightboxInfo() {
     const imageData = lightboxes[currentLightboxIndex];
-    console.log(imageData.innerHTML)
-    // lightboximage.setAttribute("src", imageData.thumbnail);
-    // console.log(currentLightboxIndex);
     document.getElementById('photo').innerHTML=imageData.innerHTML
     document.getElementById('lightboxes').classList.remove("lightboxHidden")
     document.getElementById('lightboxes').classList.remove("cptcontent")
@@ -167,7 +145,6 @@ jq(document).ready(function () {
     document.getElementById('reference').innerHTML=reference.innerHTML
     const categorie=photoinfo[currentLightboxIndex].querySelector(".categorie")
     document.getElementById('category').innerHTML=categorie.innerHTML
-    console.log(categorie)
   }
 
   next.addEventListener("click", function () {

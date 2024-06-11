@@ -17,21 +17,12 @@ get_header();
 
 <section class="main-container">
     <?php
-    // Récupérer l'ID passé depuis l'URL
+    
     $post_id = get_the_ID();
     $post = get_post($post_id);
-    // echo get_the_ID();
-
-
-    // Vérifier si l'ID est défini et s'il correspond à un post existant
-
-    // Récupérer le titre du custom post type
     $title = get_the_title($post_id);
     $taxonomies = get_taxonomies('', 'names');
-
     $terms = wp_get_post_terms($post->ID, $taxonomies);
-
-    // var_dump(get_the_terms($post, 'categorie'));
     ?>
 
     <div class="single-photo">
@@ -80,7 +71,6 @@ get_header();
                     $prev_custom_post = get_previous_post($post_id);
                     $next_custom_post = get_next_post($post_id);
                     $next_post_thumbnail = get_the_post_thumbnail($next_custom_post, 'thumbnail');
-                    // echo get_the_post_thumbnail($post_id, 'thumbnail');
 
                     echo $next_post_thumbnail; ?>
                     <!-- carousel -->
@@ -104,8 +94,6 @@ get_header();
 
                 if ($terms) {
                     // Récupère le premier terme (ou ajustez selon vos besoins)
-
-
                     $args = array(
                         'post_type' => 'photo',
                         'posts_per_page' => 2,
@@ -121,11 +109,8 @@ get_header();
                         ),
                     );
 
-                    // Affiche les arguments de la requête pour déboguer
-
-
+                   // Affiche les arguments de la requête pour déboguer
                     $loop = new WP_Query($args);
-
                     if ($loop->have_posts()) {
                         while ($loop->have_posts()) : $loop->the_post();
                             get_template_part('archive_photos');
@@ -141,11 +126,7 @@ get_header();
                     echo '<p>Ce post n\'a pas de catégorie associée.</p>';
                 }
                 ?>
-
-
-
             </div>
-
         </div>
         <div class="btn-ttes-photos  btn1">
             <a class="btn-text" href="<?php echo get_home_url(); ?>">

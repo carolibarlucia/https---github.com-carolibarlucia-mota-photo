@@ -4,16 +4,13 @@ $post_id = get_the_ID();
 $post = get_post($post_id);
 $categories = get_the_terms($post, 'categorie');
 $reference = get_post_meta($post_id, 'reference', true);
-// var_dump(get_terms('categorie'));
+
 ?>
 
 <div class="cptcontent-photo">
 	<?php
 
 	the_content();
-
-
-	// $post_id = get_the_ID();
 
 	$url = get_template_directory_uri() . "/single.php?id=" . $post_id; ?>
 

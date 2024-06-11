@@ -47,8 +47,6 @@
          
           if ($.trim(resp) !== "") {
             $(".cptcontent").html(resp);
-            // console.log(page);
-            // console.log(resp);
           } else {
             // Aucun post supplémentaire, réinitialisez la pagination
             page = 1;
@@ -66,17 +64,11 @@
         data: {
           action: "motaphoto_load_more",
           paged: page,
-          // format: format,
-          // categorie: categorie,
-          // order: order
         },
         success: function (resp) {
           if ($.trim(resp) !== "") {
             $(".cptcontent").append(resp);
-            // console.log(page);
-            // console.log(resp);
           } else {
-            // Aucun post supplémentaire, réinitialisez la pagination
             page = 1;
           }
         },

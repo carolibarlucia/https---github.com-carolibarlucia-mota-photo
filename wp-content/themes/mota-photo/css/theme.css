@@ -99,7 +99,7 @@
 
 .show {
   width: 597px;
-  height: 769px;
+  height: 720px;
   background-color: #ffffff;
   font-family: "Poppins";
   font-size: 14px;
@@ -109,13 +109,12 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 20;
+  top: 0;
   left: 50%;
   margin-left: -350px;
   line-height: 0.5em;
   overflow: hidden;
   z-index: 999;
-  overflow: hidden;
 }
 
 .formtitle {
@@ -169,7 +168,7 @@ textarea {
 }
 
 .message textarea {
-  height: 210px;
+  height: 170px;
 }
 
 /* cpt */
@@ -216,6 +215,7 @@ textarea {
   text-transform: uppercase;
   font-family: "Poppins";
   object-fit: cover;
+  opacity: 0;
 }
 
 .cptcontent-photo {
@@ -228,7 +228,8 @@ textarea {
 }
 
 .cptcontent-photo:hover .eye-btn,
-.cptcontent-photo:hover .ct-lightbox {
+.cptcontent-photo:hover .ct-lightbox,
+.cptcontent-photo:hover .photo-info {
   opacity: 1;
 }
 
@@ -257,7 +258,7 @@ textarea {
   gap: 20px;
 }
 
-.taxonomy form {
+.taxonomy select {
   width: 360px;
   height: 43px;
   border: #b8bbc2 solid;
@@ -272,6 +273,7 @@ textarea {
   background-color: #d8d8d8;
   margin-left: 42%;
   margin-bottom: 50px;
+  border: none;
 }
 
 /* LIGHTBOX */
@@ -295,6 +297,7 @@ textarea {
 .lightbox {
   position: fixed;
   top: 0;
+  margin-left: 10px;
   left: auto;
   right: auto;
   width: 100%;

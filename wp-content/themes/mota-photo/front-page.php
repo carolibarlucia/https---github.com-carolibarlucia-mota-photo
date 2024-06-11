@@ -22,26 +22,7 @@ get_header();
             $cats[] = $term->slug;
         }
     }
-    // print_r($cats[0]);
-    // $args = array(
-    //     'post_type' => 'photos',
-    //     'posts_per_page' => 12,
-    //     'orderby' => 'date',
-    //     'order' => 'DESC',
-       
-    // );
-    // $loop = new WP_Query($args);
-
-    // if ($loop->have_posts()) {
-    //     while ($loop->have_posts()) : $loop->the_post();
-    //         get_template_part('archive_photos');
-    //     endwhile;
-    //     wp_reset_postdata();
-    // } else {
-    //     // Affiche un message si aucun post n'est trouvé
-    //     echo '<p>Aucune photo trouvée pour cette catégorie.</p>';
-    // }
-
+   
     ?>
 </div>
 
