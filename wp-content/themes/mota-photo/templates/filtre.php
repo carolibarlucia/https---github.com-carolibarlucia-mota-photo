@@ -17,8 +17,6 @@
 
 		</select>
 
-
-
 		<select name="format" id="format">
 			<option value="0">FORMAT</option>
 			<?php $terms = get_terms(array(

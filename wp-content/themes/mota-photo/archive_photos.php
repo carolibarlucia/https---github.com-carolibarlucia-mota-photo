@@ -1,8 +1,10 @@
 <!-- Affichage photos -->
 <?php
 $post_id = get_the_ID();
-$categories = get_the_terms($post_id, 'categorie');
+$post = get_post($post_id);
+$categories = get_the_terms($post, 'categorie');
 $reference = get_post_meta($post_id, 'reference', true);
+// var_dump(get_terms('categorie'));
 ?>
 
 <div class="cptcontent-photo">
@@ -23,16 +25,13 @@ $reference = get_post_meta($post_id, 'reference', true);
 		<img class="eyes" src="<?php echo get_template_directory_uri() ?>/images/Icon_eye.png" />
 	</a>
 	<div class="photo-info">
-		<?php echo $reference; ?>
-		<p> </p>
-		<?php
-		// Remplacez 'categorie' par le slug de votre taxonomie
-		if (!empty($categories)) {
-			foreach ($categories as $category) {
-				echo $category->name;
-			}
-		}
+		<div class="reference">
+		<?php echo $reference;
 		?>
-		
+		</div>
+		<div class="categorie">
+			<?php 
+			echo $categories[0]->name; ?>
+		</div>
 	</div>
 </div>

@@ -10,6 +10,7 @@
     let categorieValue;
     let formatValue;
     let orderValue;
+    processFilter()
 
     // const selectCategorie = document.querySelector(".categorie");
     $(categorie).change(function () {

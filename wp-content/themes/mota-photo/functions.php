@@ -56,6 +56,22 @@ function motaphoto_filter()
         );
     }
     //Par catégorie
+    // if (!isset($categorie) && !isset($format) && !isset($orderDate)) {
+    //     $args = array(
+    //         'post_type' => 'photo',
+    //         'posts_per_page' => 12,
+    //         'tax_query' => array(
+    //             array(
+    //                 'taxonomy' => 'categorie',
+    //                 'field' => 'slug',
+    //                 'terms' => $categorie,
+    //             )
+    //         ),
+
+    //     );
+    // }
+   
+   
     if (isset($categorie) && !isset($format) && !isset($orderDate)) {
         $args = array(
             'post_type' => 'photo',

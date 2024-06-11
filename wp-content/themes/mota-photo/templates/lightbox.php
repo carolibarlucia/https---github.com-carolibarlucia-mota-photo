@@ -1,12 +1,15 @@
 <?php
 // Récupérer l'ID de la publication personnalisée
 $post_id = get_the_ID();
+$post = get_post($post_id);
+$categories = get_the_terms($post, 'categorie');
+print_r($categories);
 
 // Récupérer l'URL de l'image depuis un champ personnalisé
 $image_url = get_post_meta($post_id, 'photo', true);
 
 // Récupérer les termes de la taxonomie (catégories) associés à la publication personnalisée
-$categories = get_the_terms($post_id, 'categorie');
+
 $reference = get_field('reference', $post_id);
 
 // Afficher les informations dans votre HTML
@@ -22,19 +25,8 @@ $reference = get_field('reference', $post_id);
                 <img id="lightboximage" src="<?php echo esc_url($image_url); ?>" />
             </div>
             <div class="underlightbox">
-
-            <?php echo $reference; ?>
-            <p>   </p>
-	<?php 
-	if (!empty($categories)) {
-		foreach ($categories as $category) {
-			echo $category->name;
-		}
-	}
-	?>
-
-
-
+                <div id="reference"></div>
+                <div id="category"></div>
             </div>
         </div>
     </div>

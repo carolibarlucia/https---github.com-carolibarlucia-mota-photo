@@ -22,17 +22,18 @@ jq(document).ready(function () {
   let previous = document.querySelector(".lightbox__prev");
 
   let info = document.getElementById("info");
-  let cptcontent = document.querySelectorAll("cptcontent-photo");
+  let photoinfo = document.querySelectorAll(".photo-info");
   let photoContact = document.querySelector(".btn-contact");
   let contactPhoto = document.getElementById("contactPhoto");
   let single_prev = document.getElementById("single_prev");
   let single_next = document.getElementById("single_next");
 
   // Apparition / fermeture modale contact
-  btnContact.forEach(function (e) {
-    e.addEventListener("click", function () {
+  btnContact.forEach(function(e) {
+    e.addEventListener("click", function (e) {
       console.log("click");
       displayForm();
+      console.log(displayForm);
       e.stopPropagation;
     });
   });
@@ -60,18 +61,6 @@ jq(document).ready(function () {
       contactModal.classList.add("hidden");
     }
   }
-
-  // function showContact() {
-  //   contactPhoto.classList.remove("hidden");
-  //   contactPhoto.classList.add("show");
-  // }
-
-  //   photoContact.addEventListener("click", function () {
-  //     console.log("click");
-  //     showContact()
-  //     console.log(showContact)
-  //     e.stopPropagation;
-  //   });
 
   // LIGHTBOX
 
@@ -174,6 +163,11 @@ jq(document).ready(function () {
     document.getElementById('lightboxes').classList.remove("lightboxHidden")
     document.getElementById('lightboxes').classList.remove("cptcontent")
     document.getElementById('lightboxes').classList.add("lightbox")
+    const reference=photoinfo[currentLightboxIndex].querySelector(".reference")
+    document.getElementById('reference').innerHTML=reference.innerHTML
+    const categorie=photoinfo[currentLightboxIndex].querySelector(".categorie")
+    document.getElementById('category').innerHTML=categorie.innerHTML
+    console.log(categorie)
   }
 
   next.addEventListener("click", function () {
@@ -196,6 +190,7 @@ jq(document).ready(function () {
         lightboxes = document.querySelectorAll(".wp-block-image");
         openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
         closeLightBoxBtn = document.querySelector(".lightbox__close");
+        photoinfo = document.querySelectorAll(".photo-info");
         console.log(lightboxes.length);
         openLightBoxBtn.forEach((e, i) => {
           console.log(i)
