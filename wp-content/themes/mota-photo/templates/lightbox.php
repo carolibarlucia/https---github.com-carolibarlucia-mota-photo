@@ -26,7 +26,7 @@ $reference = get_field('reference', $post_id);
             </div>
             <div class="underlightbox">
                 <div id="reference"></div>
-                <p>  </p>
+                <p> </p>
                 <div id="category"></div>
             </div>
         </div>

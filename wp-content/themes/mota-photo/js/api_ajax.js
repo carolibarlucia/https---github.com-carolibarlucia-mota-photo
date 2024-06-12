@@ -10,7 +10,7 @@
     let categorieValue;
     let formatValue;
     let orderValue;
-    processFilter()
+    processFilter();
 
     // const selectCategorie = document.querySelector(".categorie");
     $(categorie).change(function () {
@@ -44,7 +44,6 @@
           order: orderValue,
         },
         success: function (resp) {
-         
           if ($.trim(resp) !== "") {
             $(".cptcontent").html(resp);
           } else {

@@ -22,7 +22,7 @@ get_header();
             $cats[] = $term->slug;
         }
     }
-   
+
     ?>
 </div>
 

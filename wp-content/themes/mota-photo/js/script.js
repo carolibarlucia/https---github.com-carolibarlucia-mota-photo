@@ -22,17 +22,15 @@ jq(document).ready(function () {
   let previous = document.querySelector(".lightbox__prev");
   let info = document.getElementById("info");
   let photoinfo = document.querySelectorAll(".photo-info");
-  let photoContact = document.querySelector(".btn-contact");
-  let contactPhoto = document.getElementById("contactPhoto");
+  let refPhoto = document.getElementById("ref-photo");
   let single_prev = document.getElementById("single_prev");
   let single_next = document.getElementById("single_next");
 
   // Apparition / fermeture modale contact
-  btnContact.forEach(function(e) {
+  btnContact.forEach(function (e) {
     e.addEventListener("click", function (e) {
-      console.log("click");
       displayForm();
-      console.log(displayForm);
+      showRef();
       e.stopPropagation();
     });
   });
@@ -61,19 +59,27 @@ jq(document).ready(function () {
     }
   }
 
+  function showRef() {
+    const reference =
+      photoinfo[currentLightboxIndex].querySelector(".reference");
+    document.getElementById("ref-photo").innerHTML = reference.innerHTML;
+  }
+
+  const categorie = photoinfo[currentLightboxIndex].querySelector(".categorie");
+  document.getElementById("category").innerHTML = categorie.innerHTML;
+
   // LIGHTBOX
 
   // Fonction pour initialiser les gestionnaires d'événements de la lightbox
   jq(document).ready(function () {
     // Fonction pour initialiser les gestionnaires d'événements de la lightbox
-    function initializeLightbox() {
-    }
+    function initializeLightbox() {}
     // Appeler la fonction pour initialiser les gestionnaires d'événements de la lightbox au chargement de la page
     initializeLightbox();
   });
 
   function open(i) {
-    console.log(lightboxes)
+    console.log(lightboxes);
     currentLightboxIndex = i;
     setLightboxInfo();
 
@@ -106,7 +112,7 @@ jq(document).ready(function () {
   }
 
   openLightBoxBtn.forEach((e, i) => {
-    console.log(i)
+    console.log(i);
     e.addEventListener("click", function () {
       open(i);
     });
@@ -137,14 +143,16 @@ jq(document).ready(function () {
 
   function setLightboxInfo() {
     const imageData = lightboxes[currentLightboxIndex];
-    document.getElementById('photo').innerHTML=imageData.innerHTML
-    document.getElementById('lightboxes').classList.remove("lightboxHidden")
-    document.getElementById('lightboxes').classList.remove("cptcontent")
-    document.getElementById('lightboxes').classList.add("lightbox")
-    const reference=photoinfo[currentLightboxIndex].querySelector(".reference")
-    document.getElementById('reference').innerHTML=reference.innerHTML
-    const categorie=photoinfo[currentLightboxIndex].querySelector(".categorie")
-    document.getElementById('category').innerHTML=categorie.innerHTML
+    document.getElementById("photo").innerHTML = imageData.innerHTML;
+    document.getElementById("lightboxes").classList.remove("lightboxHidden");
+    document.getElementById("lightboxes").classList.remove("cptcontent");
+    document.getElementById("lightboxes").classList.add("lightbox");
+    const reference =
+      photoinfo[currentLightboxIndex].querySelector(".reference");
+    document.getElementById("reference").innerHTML = reference.innerHTML;
+    const categorie =
+      photoinfo[currentLightboxIndex].querySelector(".categorie");
+    document.getElementById("category").innerHTML = categorie.innerHTML;
   }
 
   next.addEventListener("click", function () {
@@ -170,7 +178,7 @@ jq(document).ready(function () {
         photoinfo = document.querySelectorAll(".photo-info");
         console.log(lightboxes.length);
         openLightBoxBtn.forEach((e, i) => {
-          console.log(i)
+          console.log(i);
           e.addEventListener("click", function () {
             open(i);
           });

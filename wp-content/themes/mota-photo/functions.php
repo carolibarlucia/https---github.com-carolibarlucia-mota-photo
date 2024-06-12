@@ -24,6 +24,20 @@ add_action('shutdown', function () {
     while (@ob_end_flush());
 });
 
+
+function get_thumbnail_ajax_handler() {
+    $post_id = intval($_GET['post_id']);
+    if ($post_id) {
+        echo get_the_post_thumbnail($post_id, 'thumbnail');
+    }
+    wp_die();
+}
+
+add_action('wp_ajax_get_thumbnail', 'get_thumbnail_ajax_handler');
+add_action('wp_ajax_nopriv_get_thumbnail', 'get_thumbnail_ajax_handler');
+
+
+
 // Filtres
 function motaphoto_filter()
 {
@@ -56,22 +70,7 @@ function motaphoto_filter()
         );
     }
     //Par catégorie
-    // if (!isset($categorie) && !isset($format) && !isset($orderDate)) {
-    //     $args = array(
-    //         'post_type' => 'photo',
-    //         'posts_per_page' => 12,
-    //         'tax_query' => array(
-    //             array(
-    //                 'taxonomy' => 'categorie',
-    //                 'field' => 'slug',
-    //                 'terms' => $categorie,
-    //             )
-    //         ),
-
-    //     );
-    // }
-   
-   
+     
     if (isset($categorie) && !isset($format) && !isset($orderDate)) {
         $args = array(
             'post_type' => 'photo',

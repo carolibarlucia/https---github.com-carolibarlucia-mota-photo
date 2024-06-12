@@ -23,11 +23,11 @@ $reference = get_post_meta($post_id, 'reference', true);
 	</a>
 	<div class="photo-info">
 		<div class="reference">
-		<?php echo $reference;
-		?>
+			<?php echo $reference;
+			?>
 		</div>
 		<div class="categorie">
-			<?php 
+			<?php
 			echo $categories[0]->name; ?>
 		</div>
 	</div>

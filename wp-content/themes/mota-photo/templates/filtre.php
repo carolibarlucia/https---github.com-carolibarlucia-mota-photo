@@ -4,14 +4,14 @@
 		<select id="categorie">
 			<option value="0">CATEGORIE</option>
 			<?php $terms = get_terms(array(
-			'taxonomy' => 'categorie',
-			'hide_empty' => false,
+				'taxonomy' => 'categorie',
+				'hide_empty' => false,
 			));
 
 			if ($terms && !is_wp_error($terms)) {
-			foreach ($terms as $term) {
-			echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
-			}
+				foreach ($terms as $term) {
+					echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+				}
 			}
 			?>
 
@@ -20,13 +20,13 @@
 		<select name="format" id="format">
 			<option value="0">FORMAT</option>
 			<?php $terms = get_terms(array(
-			'taxonomy' => 'format',
-			'hide_empty' => false,
+				'taxonomy' => 'format',
+				'hide_empty' => false,
 			));
 			if ($terms && !is_wp_error($terms)) {
-			foreach ($terms as $term) {
-			echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
-			}
+				foreach ($terms as $term) {
+					echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+				}
 			}
 			?>
 
