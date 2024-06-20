@@ -69,20 +69,16 @@ jq(document).ready(function () {
   }
 
   function showRef() {
-    const reference2 = document.querySelector(".referenceid");
-    if (reference2) {
-        document.getElementById("reference-field").innerHTML = reference2.innerHTML;
-    } else {
-        console.warn("L'élément de référence de la page n'a pas été trouvé.");
-    }
-}
-  
+    // Trouver l'élément qui contient la référence de la photo
+    const referenceElement = document.getElementById("referenceid");
 
-  function showRef() {
-    const reference =
-      photoinfo[currentLightboxIndex].querySelector(".reference");
-    document.getElementById("reference-field").innerHTML = reference.innerHTML;
-  }
+    // Récupérer la référence à partir de cet élément
+    const reference = referenceElement.innerHTML;
+
+    // Mettre à jour le champ dans le formulaire de contact
+    document.getElementById("reference-field").innerHTML = reference;
+}
+
  
   // LIGHTBOX
 
