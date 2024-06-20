@@ -9,6 +9,7 @@ jq(document).ready(function () {
 
   var contactModal = document.getElementById("contactModal");
   var btnContact = document.querySelectorAll(".idcontact");
+  var btnContact2 = document.querySelectorAll(".idcontact2");
   var contactLink = document.querySelector(".idcontact a p");
   let lightboxes = document.querySelectorAll(".wp-block-image");
   let btnFullscreen = document.querySelectorAll(".wp-block-image");
@@ -25,9 +26,17 @@ jq(document).ready(function () {
   let refPhoto = document.getElementById("ref-photo");
   let single_prev = document.getElementById("single_prev");
   let single_next = document.getElementById("single_next");
+  let referenceid = document.getElementById("referenceid");
 
   // Apparition / fermeture modale contact
   btnContact.forEach(function (e) {
+    e.addEventListener("click", function (e) {
+      displayForm();
+      e.stopPropagation();
+    });
+  });
+
+  btnContact2.forEach(function (e) {
     e.addEventListener("click", function (e) {
       displayForm();
       showRef();
@@ -60,14 +69,21 @@ jq(document).ready(function () {
   }
 
   function showRef() {
+    const reference2 = document.querySelector(".referenceid");
+    if (reference2) {
+        document.getElementById("reference-field").innerHTML = reference2.innerHTML;
+    } else {
+        console.warn("L'élément de référence de la page n'a pas été trouvé.");
+    }
+}
+  
+
+  function showRef() {
     const reference =
       photoinfo[currentLightboxIndex].querySelector(".reference");
-    document.getElementById("ref-photo").innerHTML = reference.innerHTML;
+    document.getElementById("reference-field").innerHTML = reference.innerHTML;
   }
-
-  const categorie = photoinfo[currentLightboxIndex].querySelector(".categorie");
-  document.getElementById("category").innerHTML = categorie.innerHTML;
-
+ 
   // LIGHTBOX
 
   // Fonction pour initialiser les gestionnaires d'événements de la lightbox

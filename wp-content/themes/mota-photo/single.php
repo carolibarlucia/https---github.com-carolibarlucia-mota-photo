@@ -28,7 +28,7 @@ get_header();
                 <h2><?php echo esc_html($title); ?></h2>
                 <div class="row2">
                     <p>référence : </p>
-                    <p><?php echo esc_html(get_post_meta($post_id, 'reference', true)); ?></p>
+                    <p id="referenceid"><?php echo esc_html(get_post_meta($post_id, 'reference', true)); ?></p>
                 </div>
                 <div class="row2">
                     <p>catégorie : </p>
@@ -54,7 +54,7 @@ get_header();
         <div class="row3">
             <div class="row4">
                 <p>Cette photo vous intéresse</p>
-                <p id="btn-contact" class="btn1 btn-text idcontact">Contact</p>
+                <p id="btn-contact" class="btn1 btn-text idcontact2">Contact</p>
             </div>
             <div class="row4">
                 <div></div>
@@ -70,43 +70,24 @@ get_header();
                     </div>
                     <!-- carrousel -->
                     <div class="arrow">
-                        <img id="single_prev" src="<?php echo esc_url(get_template_directory_uri() . '/images/Line2.png'); ?>" alt="Précédent">
-                        <img id="single_next" src="<?php echo esc_url(get_template_directory_uri() . '/images/Line1.png'); ?>" alt="Suivant">
+
+                        <?php
+
+                        if ($prev_custom_post) {
+                            $prev_custom_post_link = get_permalink($prev_custom_post);
+                            echo '<a href="' . esc_url($prev_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line2.png" alt="voir la photo précédente" class="arrow-left"/></a>';
+                        }
+
+                        if ($next_custom_post) {
+                            $next_custom_post_link = get_permalink($next_custom_post);
+                            echo '<a href="' . esc_url($next_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line1.png" alt="voir la photo suivante" class="arrow-right"/></a>';
+                        }
+                        ?>
+
                     </div>
                 </div>
 
-                <script>
-                    document.addEventListener('DOMContentLoaded', (event) => {
-                        const prevButton = document.getElementById('single_prev');
-                        const nextButton = document.getElementById('single_next');
-                        const thumbnailContainer = document.getElementById('current-thumbnail-container');
 
-                        const fetchThumbnail = (postID) => {
-                            fetch(`<?php echo admin_url('admin-ajax.php'); ?>?action=get_thumbnail&post_id=${postID}`)
-                                .then(response => response.text())
-                                .then(data => {
-                                    thumbnailContainer.innerHTML = data;
-                                })
-                                .catch(error => console.error('Erreur lors de la récupération de la vignette :', error));
-                        };
-
-                        if (prevButton) {
-                            prevButton.addEventListener('click', () => {
-                                <?php if ($prev_custom_post) : ?>
-                                    fetchThumbnail('<?php echo $prev_custom_post->ID; ?>');
-                                <?php endif; ?>
-                            });
-                        }
-
-                        if (nextButton) {
-                            nextButton.addEventListener('click', () => {
-                                <?php if ($next_custom_post) : ?>
-                                    fetchThumbnail('<?php echo $next_custom_post->ID; ?>');
-                                <?php endif; ?>
-                            });
-                        }
-                    });
-                </script>
             </div>
         </div>
         <div>
@@ -153,6 +134,7 @@ get_header();
         </div>
     </div>
 </section>
+
 <?php
 get_footer();
 ?>

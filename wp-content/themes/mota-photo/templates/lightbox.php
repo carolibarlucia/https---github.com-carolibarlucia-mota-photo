@@ -14,10 +14,10 @@ $reference = get_field('reference', $post_id);
 
 // Afficher les informations dans votre HTML
 ?>
-<section class="main-container">
+
     <div id="lightboxes" class="lightboxHidden">
         <button class="lightbox__close"><img src="<?php echo get_template_directory_uri() . '/images/Vector.png'; ?>" /></button>
-        <div class="main-container">
+       
             <button class="lightbox__prev"><img src="<?php echo get_template_directory_uri() . '/images/Line8.png'; ?>" /> Précédent</button>
             <button class="lightbox__next">Suivant <img src="<?php echo get_template_directory_uri() . '/images/Line7.png'; ?>" /></button>
             <div id="photo" class="lightbox__container">
@@ -29,6 +29,5 @@ $reference = get_field('reference', $post_id);
                 <p> </p>
                 <div id="category"></div>
             </div>
-        </div>
+       
     </div>
-</section>

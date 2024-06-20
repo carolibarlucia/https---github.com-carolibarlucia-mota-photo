@@ -329,3 +329,6 @@ function lightboxShow()
 add_action('wp_ajax_lightboxShow', 'lightboxShow');
 add_action('wp_ajax_nopriv_lightboxShow', 'lightboxShow');
 
+
+// SLIDER PAGE SINGLE
+

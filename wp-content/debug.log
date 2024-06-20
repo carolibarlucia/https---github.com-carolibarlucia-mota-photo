@@ -2101,3 +2101,45 @@ Stack trace:
 #2 C:\MAMP\htdocs\mota-photo\index.php(17): require('C:\\MAMP\\htdocs\\...')
 #3 {main}
   thrown in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 96
+[13-Jun-2024 08:03:03 UTC] PHP Parse error:  syntax error, unexpected token ">" in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\functions.php on line 28
+[17-Jun-2024 06:05:55 UTC] PHP Warning:  Une erreur imprévue s’est produite. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in C:\MAMP\htdocs\mota-photo\wp-includes\update.php on line 211
+[17-Jun-2024 06:05:55 UTC] PHP Warning:  Une erreur imprévue s’est produite. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in C:\MAMP\htdocs\mota-photo\wp-includes\update.php on line 449
+[17-Jun-2024 06:05:55 UTC] PHP Warning:  Une erreur imprévue s’est produite. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in C:\MAMP\htdocs\mota-photo\wp-includes\update.php on line 730
+[17-Jun-2024 09:19:39 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 65
+[17-Jun-2024 09:19:39 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 66
+[17-Jun-2024 09:19:40 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 65
+[17-Jun-2024 09:19:40 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 66
+[17-Jun-2024 12:16:55 UTC] Array
+(
+    [thumbnail] => 
+    [prev_post_id] => 
+    [next_post_id] => 
+)
+
+[17-Jun-2024 12:16:57 UTC] Array
+(
+    [thumbnail] => 
+    [prev_post_id] => 
+    [next_post_id] => 
+)
+
+[18-Jun-2024 07:15:42 UTC] Initial prev post: 
+[18-Jun-2024 07:15:42 UTC] Initial next post: 
+[18-Jun-2024 07:15:43 UTC] Initial prev post: 
+[18-Jun-2024 07:15:43 UTC] Initial next post: 
+[18-Jun-2024 07:20:29 UTC] Initial prev post: 
+[18-Jun-2024 07:20:29 UTC] Initial next post: 
+[18-Jun-2024 07:20:29 UTC] Initial prev post: 
+[18-Jun-2024 07:20:29 UTC] Initial next post: 
+[18-Jun-2024 07:27:25 UTC] Initial prev post: 
+[18-Jun-2024 07:27:25 UTC] Initial next post: 
+[18-Jun-2024 07:27:25 UTC] Initial prev post: 
+[18-Jun-2024 07:27:25 UTC] Initial next post: 
+[18-Jun-2024 07:40:19 UTC] Initial prev post: 
+[18-Jun-2024 07:40:19 UTC] Initial next post: 
+[18-Jun-2024 07:40:20 UTC] Initial prev post: 
+[18-Jun-2024 07:40:20 UTC] Initial next post: 
+[18-Jun-2024 07:42:13 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 64
+[18-Jun-2024 07:42:13 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 65
+[18-Jun-2024 07:42:14 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 64
+[18-Jun-2024 07:42:14 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 65
