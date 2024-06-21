@@ -50,8 +50,41 @@
   text-align: right;
   font-family: "SpaceMono";
   text-decoration: none !important;
+  color: #000000;
+  text-transform: uppercase;
   margin-top: -0.2em;
   gap: 100px;
+}
+
+.menu :visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu-icon{
+  position: relative; 
+  width: 54px;
+  height: 54px; 
+
+  transition: transform 0.5s;
+}
+.menu-icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); 
+
+  display: block;
+  width: 22px;
+  height: 2px;
+
+  background-color: #FFF;
+
+  transition: background 0.5s;
 }
 
 /* Footer */
@@ -60,10 +93,12 @@
   font-family: "SpaceMono";
   display: flex;
   flex-direction: row !important;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
-  gap: 100px;
+  gap: 30px;
   text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* HERO */
@@ -167,6 +202,21 @@ textarea {
   align-items: start;
 }
 
+#reference-field {
+  width: 263px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b8bbc2;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: -15px;
+  text-align: start;
+  align-items: start;
+  text-transform: uppercase;
+}
+
 .message textarea {
   height: 170px;
 }
@@ -240,6 +290,11 @@ textarea {
   align-items: center;
   object-fit: cover !important;
   padding: 2px;
+}
+
+#current-thumbnail-container {
+  width: 100px;
+  height: 100px;
 }
 
 /* taxonomy */
@@ -345,7 +400,7 @@ textarea {
   vertical-align: middle;
 }
 
-.lightbox__container img{
+.lightbox__container img {
   width: auto;
   height: 100vh;
 }
@@ -370,12 +425,10 @@ textarea {
 }
 
 .lightbox__prev {
-  
   left: 5%;
 }
 
 .lightbox__next {
-  
   right: 5%;
 }
 
@@ -525,3 +578,4 @@ textarea {
 .get_id {
   display: none;
 }
+

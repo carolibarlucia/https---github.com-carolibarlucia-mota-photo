@@ -12,21 +12,46 @@ jq(document).ready(function () {
   var btnContact2 = document.querySelectorAll(".idcontact2");
   var contactLink = document.querySelector(".idcontact a p");
   let lightboxes = document.querySelectorAll(".wp-block-image");
-  let btnFullscreen = document.querySelectorAll(".wp-block-image");
-  let btnCloseFullscreen = document.querySelectorAll(".close-button");
+  // let btnFullscreen = document.querySelectorAll(".wp-block-image");
+  // let btnCloseFullscreen = document.querySelectorAll(".close-button");
   let openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
   let closeLightBoxBtn = document.querySelector(".lightbox__close");
   var lightboximg = document.getElementById("lightboxes");
   let currentLightboxIndex = 0;
-  let lightboximage = document.getElementById("lightboximage");
+  // let lightboximage = document.getElementById("lightboximage");
   let next = document.querySelector(".lightbox__next");
   let previous = document.querySelector(".lightbox__prev");
-  let info = document.getElementById("info");
+  // let info = document.getElementById("info");
   let photoinfo = document.querySelectorAll(".photo-info");
-  let refPhoto = document.getElementById("ref-photo");
-  let single_prev = document.getElementById("single_prev");
-  let single_next = document.getElementById("single_next");
-  let referenceid = document.getElementById("referenceid");
+  let prevImage = document.getElementById("prev-thumbnail");
+  let nextImage = document.getElementById("next-thumbnail");
+
+  // let refPhoto = document.getElementById("ref-photo");
+  // let single_prev = document.getElementById("single_prev");
+  // let single_next = document.getElementById("single_next");
+  // let referenceid = document.getElementById("referenceid");
+
+  if (prevImage) {
+    prevImage.style.display = "none";
+  }
+  document.querySelector(".arrow-left").addEventListener("mouseover", function (e) {
+      prevImage.style.display = "block";
+    });
+
+  document.querySelector(".arrow-left").addEventListener("mouseleave", function (e) {
+      prevImage.style.display = "none";
+    });
+
+  if (nextImage) {
+    nextImage.style.display = "none";
+  }
+  document.querySelector(".arrow-right").addEventListener("mouseover", function (e) {
+      nextImage.style.display = "block";
+    });
+
+  document.querySelector(".arrow-right").addEventListener("mouseleave", function (e) {
+      nextImage.style.display = "none";
+    });
 
   // Apparition / fermeture modale contact
   btnContact.forEach(function (e) {
@@ -77,9 +102,8 @@ jq(document).ready(function () {
 
     // Mettre à jour le champ dans le formulaire de contact
     document.getElementById("reference-field").innerHTML = reference;
-}
+  }
 
- 
   // LIGHTBOX
 
   // Fonction pour initialiser les gestionnaires d'événements de la lightbox

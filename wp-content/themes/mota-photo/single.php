@@ -63,11 +63,15 @@ get_header();
                         <?php
                         $prev_custom_post = get_previous_post();
                         $next_custom_post = get_next_post();
-                        $next_post_thumbnail = get_the_post_thumbnail($next_custom_post, 'thumbnail', ['id' => 'current-thumbnail']);
+                        $next_post_thumbnail = get_the_post_thumbnail($next_custom_post, 'thumbnail', ['id' => 'next-thumbnail']);
+                        $prev_post_thumbnail = get_the_post_thumbnail($prev_custom_post, 'thumbnail', ['id' => 'prev-thumbnail']);
+                        echo $prev_post_thumbnail;
                         echo $next_post_thumbnail;
+                        
 
                         ?>
                     </div>
+                    
                     <!-- carrousel -->
                     <div class="arrow">
 
