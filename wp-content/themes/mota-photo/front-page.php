@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <div class="hero">
-
+    <img src="<?php echo get_template_directory_uri() . '/images/nathalie-2.jpeg'; ?>">
     <h1>PHOTOGRAPHE EVENT</h1>
 </div>
 

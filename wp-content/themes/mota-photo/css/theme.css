@@ -71,49 +71,26 @@
   color: #000 !important;
 }
 
-.menu-icon {
-  content: " ";
-  position: relative;
-  width: 54px;
-  height: 54px;
-
-  transition: transform 0.5s;
+.haut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
-.menu-icon span {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
 
+.burger {
+  display: none;
+}
+
+.cross {
+  display: none;
+}
+
+.cross-show {
   display: block;
-  width: 22px;
-  height: 2px;
-
-  background-color: #fff;
-
-  transition: background 0.5s;
+  text-align: right;
 }
 
-.menu-icon span::before,
-.menu-icon span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-6px);
-
-  display: block;
-  width: 22px;
-  height: 2px;
-
-  background-color: #fff;
-
-  transition: transform 0.5s;
-}
-.menu-icon span::after {
-  transform: translateY(6px);
-}
 
 /* Footer */
 
@@ -137,16 +114,20 @@
 
 /* HERO */
 .hero {
-  background-image: url(../images/nathalie-2.jpeg);
-  background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: 962px;
+  max-height: 962px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
+.hero img {
+  width: 100%;
+  height: auto;
+}
 .hero h1 {
   font-family: "SpaceMono";
-  font-size: 6em;
+  font-size: 8vw;
   font-style: italic;
   font-weight: 900;
   color: #11ffee00;
@@ -155,9 +136,8 @@
   z-index: 1;
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 0;
-  transform: translate(0, -50%);
   text-align: center;
 }
 
@@ -627,6 +607,25 @@ textarea {
     flex-direction: column !important;
     justify-content: center !important;
     gap: 5px;
+    margin-right: 10px;
+  }
+
+.header- {
+  display: none;
+}
+
+  .burger {
+    display: block;
+    text-align: right !important;
+  }
+
+  .burger-hide {
+    display: none;
+  }
+
+  .hero h1 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
   }
 
   /* Formulaire contact */
@@ -651,10 +650,12 @@ textarea {
   }
 
   /* Accueil */
+
   .menu-taxonomy {
     flex-direction: column;
     justify-content: baseline;
     gap: 5px;
+    margin-left: 10px;
   }
 
   .taxonomy {
@@ -665,6 +666,10 @@ textarea {
 
   .cptcontent {
     column-count: 1;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: same-as-width;
   }
 
   .chargerPlus {
@@ -707,10 +712,10 @@ textarea {
     display: flex;
     flex-direction: column;
   }
-}
 
-.row3 .cptcontent-photo {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  .row3 .cptcontent-photo {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

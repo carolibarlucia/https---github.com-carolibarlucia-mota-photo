@@ -12,6 +12,7 @@ function motaphoto_scripts()
 }
 add_action('wp_enqueue_scripts', 'motaphoto_scripts');
 
+
 function register_my_menu()
 {
     register_nav_menu('main-menu', __('Menu principal', 'text-domain'));

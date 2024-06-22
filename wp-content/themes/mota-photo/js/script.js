@@ -21,6 +21,9 @@ jq(document).ready(function () {
   let photoinfo = document.querySelectorAll(".photo-info");
   let prevImage = document.getElementById("prev-thumbnail");
   let nextImage = document.getElementById("next-thumbnail");
+  let cross = document.getElementById("cross");
+  let burger = document.getElementById("burger");
+  let Menu = document.getElementById("header-");
 
   // SLIDER PAGE SINGLE
   if (prevImage) {
@@ -101,7 +104,7 @@ jq(document).ready(function () {
 
   function clearReferenceField() {
     document.querySelector("#reference-field input").style.display = "none";
-}
+  }
 
   // LIGHTBOX
   function open(i) {
@@ -154,9 +157,11 @@ jq(document).ready(function () {
     document.getElementById("lightboxes").classList.remove("lightboxHidden");
     document.getElementById("lightboxes").classList.remove("cptcontent");
     document.getElementById("lightboxes").classList.add("lightbox");
-    const reference = photoinfo[currentLightboxIndex].querySelector(".reference");
+    const reference =
+      photoinfo[currentLightboxIndex].querySelector(".reference");
     document.getElementById("reference").innerHTML = reference.innerHTML;
-    const categorie = photoinfo[currentLightboxIndex].querySelector(".categorie");
+    const categorie =
+      photoinfo[currentLightboxIndex].querySelector(".categorie");
     document.getElementById("category").innerHTML = categorie.innerHTML;
   }
 
@@ -188,6 +193,38 @@ jq(document).ready(function () {
       }
     }
   };
+
+  // RESPONSIVE
+  burger.addEventListener("click", function () {
+    showMenu();
+    showCross();
+  });
+
+  cross.addEventListener("click", function () {
+    hideMenu();
+    showBurger()
+  });
+  function showMenu() {
+    Menu.classList.remove("header-")
+  }
+
+  function hideMenu() {
+    Menu.classList.add("header-")
+  }
+
+  function showCross () {
+    cross.classList.remove("cross")
+    cross.classList.add("cross-show")
+    burger.classList.remove("burger")
+    burger.classList.add("burger-hide")
+  }
+
+  function showBurger() {
+    cross.classList.add("cross")
+    cross.classList.remove("cross-show")
+    burger.classList.add("burger")
+    burger.classList.remove("burger-hide")
+  }
 
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
