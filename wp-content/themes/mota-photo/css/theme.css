@@ -50,7 +50,7 @@
   text-align: right;
   font-family: "SpaceMono";
   text-decoration: none !important;
-  color: #000000;
+  color: #000000 !important;
   text-transform: uppercase;
   margin-top: -0.2em;
   gap: 100px;
@@ -58,39 +58,68 @@
 
 .menu :visited {
   text-decoration: none;
-  color: #000;
+  color: #000 !important;
 }
 
 .menu a {
   text-decoration: none;
+  color: #000;
 }
 
-.menu-icon{
-  position: relative; 
+.menu :visited a {
+  text-decoration: none;
+  color: #000 !important;
+}
+
+.menu-icon {
+  content: " ";
+  position: relative;
   width: 54px;
-  height: 54px; 
+  height: 54px;
 
   transition: transform 0.5s;
 }
 .menu-icon span {
+  content: " ";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%); 
+  transform: translateX(-50%) translateY(-50%);
 
   display: block;
   width: 22px;
   height: 2px;
 
-  background-color: #FFF;
+  background-color: #fff;
 
   transition: background 0.5s;
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-6px);
+
+  display: block;
+  width: 22px;
+  height: 2px;
+
+  background-color: #fff;
+
+  transition: transform 0.5s;
+}
+.menu-icon span::after {
+  transform: translateY(6px);
 }
 
 /* Footer */
 
 .footer {
   font-family: "SpaceMono";
+  color: #000;
   display: flex;
   flex-direction: row !important;
   justify-content: space-around;
@@ -99,6 +128,11 @@
   text-decoration: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer :visited a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* HERO */
@@ -112,7 +146,7 @@
 
 .hero h1 {
   font-family: "SpaceMono";
-  font-size: 96px;
+  font-size: 6em;
   font-style: italic;
   font-weight: 900;
   color: #11ffee00;
@@ -329,6 +363,7 @@ textarea {
   margin-left: 42%;
   margin-bottom: 50px;
   border: none;
+  cursor: pointer;
 }
 
 /* LIGHTBOX */
@@ -445,6 +480,10 @@ textarea {
 /* page single */
 .single-photo {
   font-family: "SpaceMono";
+}
+
+.photo1 {
+  display: none;
 }
 
 .column {
@@ -579,3 +618,99 @@ textarea {
   display: none;
 }
 
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  /* Menu */
+  .menu {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 5px;
+  }
+
+  /* Formulaire contact */
+  .show {
+    width: 286px;
+    left: 0;
+    margin-left: 0;
+  }
+
+  .formsubmit input[type="submit"] {
+    width: 190px;
+  }
+
+  .rectangle input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 190px;
+  }
+
+  #reference-field {
+    width: 190px;
+  }
+
+  /* Accueil */
+  .menu-taxonomy {
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 5px;
+  }
+
+  .taxonomy {
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 5px;
+  }
+
+  .cptcontent {
+    column-count: 1;
+  }
+
+  .chargerPlus {
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    margin-bottom: 50px;
+    border: none;
+  }
+
+  /* SINGLE */
+
+  .photo1 {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo2 {
+    display: none;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .column2 {
+    display: none;
+  }
+
+  .image-categorie {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .row3 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.row3 .cptcontent-photo {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

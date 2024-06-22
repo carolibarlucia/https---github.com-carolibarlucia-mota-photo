@@ -25,6 +25,9 @@ get_header();
     <div class="single-photo">
         <div class="row">
             <div class="column">
+                <div class="photo1">
+                    <?php echo get_the_post_thumbnail($post_id, 'large'); ?>
+                </div>
                 <h2><?php echo esc_html($title); ?></h2>
                 <div class="row2">
                     <p>référence : </p>
@@ -47,7 +50,7 @@ get_header();
                     <p><?php echo esc_html(get_post_meta($post_id, 'annee', true)); ?></p>
                 </div>
             </div>
-            <div>
+            <div class="photo2">
                 <?php echo get_the_post_thumbnail($post_id, 'large'); ?>
             </div>
         </div>
@@ -67,28 +70,30 @@ get_header();
                         $prev_post_thumbnail = get_the_post_thumbnail($prev_custom_post, 'thumbnail', ['id' => 'prev-thumbnail']);
                         echo $prev_post_thumbnail;
                         echo $next_post_thumbnail;
-                        
+
 
                         ?>
                     </div>
-                    
+
                     <!-- carrousel -->
                     <div class="arrow">
-
                         <?php
-
                         if ($prev_custom_post) {
                             $prev_custom_post_link = get_permalink($prev_custom_post);
                             echo '<a href="' . esc_url($prev_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line2.png" alt="voir la photo précédente" class="arrow-left"/></a>';
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/images/Line2-disabled.png" alt="aucune photo précédente" class="arrow-left disabled"/>';
                         }
 
                         if ($next_custom_post) {
                             $next_custom_post_link = get_permalink($next_custom_post);
                             echo '<a href="' . esc_url($next_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line1.png" alt="voir la photo suivante" class="arrow-right"/></a>';
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/images/Line1-disabled.png" alt="aucune photo suivante" class="arrow-right disabled"/>';
                         }
                         ?>
-
                     </div>
+
                 </div>
             </div>
         </div>

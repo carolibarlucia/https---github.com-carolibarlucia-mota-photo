@@ -12,72 +12,72 @@ jq(document).ready(function () {
   var btnContact2 = document.querySelectorAll(".idcontact2");
   var contactLink = document.querySelector(".idcontact a p");
   let lightboxes = document.querySelectorAll(".wp-block-image");
-  // let btnFullscreen = document.querySelectorAll(".wp-block-image");
-  // let btnCloseFullscreen = document.querySelectorAll(".close-button");
   let openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
   let closeLightBoxBtn = document.querySelector(".lightbox__close");
   var lightboximg = document.getElementById("lightboxes");
   let currentLightboxIndex = 0;
-  // let lightboximage = document.getElementById("lightboximage");
   let next = document.querySelector(".lightbox__next");
   let previous = document.querySelector(".lightbox__prev");
-  // let info = document.getElementById("info");
   let photoinfo = document.querySelectorAll(".photo-info");
   let prevImage = document.getElementById("prev-thumbnail");
   let nextImage = document.getElementById("next-thumbnail");
 
-  // let refPhoto = document.getElementById("ref-photo");
-  // let single_prev = document.getElementById("single_prev");
-  // let single_next = document.getElementById("single_next");
-  // let referenceid = document.getElementById("referenceid");
-
+  // SLIDER PAGE SINGLE
   if (prevImage) {
     prevImage.style.display = "none";
   }
-  document.querySelector(".arrow-left").addEventListener("mouseover", function (e) {
+  const arrowLeft = document.querySelector(".arrow-left");
+  if (arrowLeft) {
+    arrowLeft.addEventListener("mouseover", function (e) {
       prevImage.style.display = "block";
     });
 
-  document.querySelector(".arrow-left").addEventListener("mouseleave", function (e) {
+    arrowLeft.addEventListener("mouseleave", function (e) {
       prevImage.style.display = "none";
     });
+  }
 
   if (nextImage) {
     nextImage.style.display = "none";
   }
-  document.querySelector(".arrow-right").addEventListener("mouseover", function (e) {
+  const arrowRight = document.querySelector(".arrow-right");
+  if (arrowRight) {
+    arrowRight.addEventListener("mouseover", function (e) {
       nextImage.style.display = "block";
     });
 
-  document.querySelector(".arrow-right").addEventListener("mouseleave", function (e) {
+    arrowRight.addEventListener("mouseleave", function (e) {
       nextImage.style.display = "none";
     });
+  }
 
   // Apparition / fermeture modale contact
   btnContact.forEach(function (e) {
-    e.addEventListener("click", function (e) {
+    e.addEventListener("click", function (event) {
+      clearReferenceField();
       displayForm();
-      e.stopPropagation();
+      event.stopPropagation();
     });
   });
 
   btnContact2.forEach(function (e) {
-    e.addEventListener("click", function (e) {
+    e.addEventListener("click", function (event) {
       displayForm();
       showRef();
-      e.stopPropagation();
+      event.stopPropagation();
     });
   });
 
-  document.onclick = function (event) {
+  document.addEventListener("click", function (event) {
     if (
       !contactModal.contains(event.target) &&
       contactModal.classList.contains("show") &&
-      event.target != contactLink
+      !Array.from(btnContact).includes(event.target) &&
+      !Array.from(btnContact2).includes(event.target)
     ) {
       hideForm();
     }
-  };
+  });
 
   function displayForm() {
     if (contactModal.classList.contains("hidden")) {
@@ -94,50 +94,19 @@ jq(document).ready(function () {
   }
 
   function showRef() {
-    // Trouver l'élément qui contient la référence de la photo
     const referenceElement = document.getElementById("referenceid");
-
-    // Récupérer la référence à partir de cet élément
     const reference = referenceElement.innerHTML;
-
-    // Mettre à jour le champ dans le formulaire de contact
     document.getElementById("reference-field").innerHTML = reference;
   }
 
+  function clearReferenceField() {
+    document.querySelector("#reference-field input").style.display = "none";
+}
+
   // LIGHTBOX
-
-  // Fonction pour initialiser les gestionnaires d'événements de la lightbox
-  jq(document).ready(function () {
-    // Fonction pour initialiser les gestionnaires d'événements de la lightbox
-    function initializeLightbox() {}
-    // Appeler la fonction pour initialiser les gestionnaires d'événements de la lightbox au chargement de la page
-    initializeLightbox();
-  });
-
   function open(i) {
-    console.log(lightboxes);
     currentLightboxIndex = i;
     setLightboxInfo();
-
-    return;
-    jq.ajax({
-      type: "POST",
-      url: apiUrl,
-      data: {
-        action: "lightboxShow",
-        index: i,
-      },
-
-      success: function (resp) {
-        lightboxes = resp;
-        currentLightboxIndex = i;
-        setLightboxInfo();
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.error("Erreur AJAX: " + textStatus, errorThrown);
-        // Gérer l'erreur en conséquence
-      },
-    });
     lightboximg.classList.remove("lightboxHidden");
     lightboximg.classList.add("lightbox");
   }
@@ -148,15 +117,16 @@ jq(document).ready(function () {
   }
 
   openLightBoxBtn.forEach((e, i) => {
-    console.log(i);
-    e.addEventListener("click", function () {
+    e.addEventListener("click", function (event) {
       open(i);
+      event.stopPropagation();
     });
   });
 
   if (closeLightBoxBtn) {
-    closeLightBoxBtn.addEventListener("click", function () {
+    closeLightBoxBtn.addEventListener("click", function (event) {
       close();
+      event.stopPropagation();
     });
   }
 
@@ -168,6 +138,7 @@ jq(document).ready(function () {
     }
     setLightboxInfo();
   }
+
   function slidePrevious() {
     if (currentLightboxIndex == 0) {
       currentLightboxIndex = lightboxes.length - 1;
@@ -183,28 +154,24 @@ jq(document).ready(function () {
     document.getElementById("lightboxes").classList.remove("lightboxHidden");
     document.getElementById("lightboxes").classList.remove("cptcontent");
     document.getElementById("lightboxes").classList.add("lightbox");
-    const reference =
-      photoinfo[currentLightboxIndex].querySelector(".reference");
+    const reference = photoinfo[currentLightboxIndex].querySelector(".reference");
     document.getElementById("reference").innerHTML = reference.innerHTML;
-    const categorie =
-      photoinfo[currentLightboxIndex].querySelector(".categorie");
+    const categorie = photoinfo[currentLightboxIndex].querySelector(".categorie");
     document.getElementById("category").innerHTML = categorie.innerHTML;
   }
 
-  next.addEventListener("click", function () {
+  next.addEventListener("click", function (event) {
     slideNext();
+    event.stopPropagation();
   });
 
-  previous.addEventListener("click", function () {
+  previous.addEventListener("click", function (event) {
     slidePrevious();
+    event.stopPropagation();
   });
-  // Select the node that will be observed for mutations
+
   const targetNode = document.querySelector(".main-container");
-
-  // Options for the observer (which mutations to observe)
   const config = { attributes: true, childList: true, subtree: true };
-
-  // Callback function to execute when mutations are observed
   const callback = (mutationList, observer) => {
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
@@ -212,22 +179,16 @@ jq(document).ready(function () {
         openLightBoxBtn = document.querySelectorAll(".ct-lightbox");
         closeLightBoxBtn = document.querySelector(".lightbox__close");
         photoinfo = document.querySelectorAll(".photo-info");
-        console.log(lightboxes.length);
         openLightBoxBtn.forEach((e, i) => {
-          console.log(i);
-          e.addEventListener("click", function () {
+          e.addEventListener("click", function (event) {
             open(i);
+            event.stopPropagation();
           });
         });
-      } else if (mutation.type === "attributes") {
-        console.log(`The ${mutation.attributeName} attribute was modified.`);
       }
     }
   };
 
-  // Create an observer instance linked to the callback function
   const observer = new MutationObserver(callback);
-
-  // Start observing the target node for configured mutations
   observer.observe(targetNode, config);
 });

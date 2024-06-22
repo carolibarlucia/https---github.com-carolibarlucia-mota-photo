@@ -2144,3 +2144,29 @@ Stack trace:
 [18-Jun-2024 07:42:14 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 64
 [18-Jun-2024 07:42:14 UTC] PHP Warning:  Undefined variable $postID in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 65
 [21-Jun-2024 05:23:28 UTC] PHP Notice:  La fonction register_taxonomy a été appelée de façon incorrecte. La propriété « name » de la taxonomie « format » (format) ne fonctionne pas avec l’une des propriétés déjà existantes sur le contrôleur de publications de l’API REST. Spécifiez une « rest_base » personnalisée lors de l’enregistrement de la taxonomie pour éviter cette erreur. Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.4.0.) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 6078
+[21-Jun-2024 11:53:17 UTC] PHP Notice:  La fonction register_taxonomy a été appelée de façon incorrecte. La propriété « name » de la taxonomie « format » (format) ne fonctionne pas avec l’une des propriétés déjà existantes sur le contrôleur de publications de l’API REST. Spécifiez une « rest_base » personnalisée lors de l’enregistrement de la taxonomie pour éviter cette erreur. Veuillez lire <a>Débogage dans WordPress</a> (en) pour plus d’informations. (Ce message a été ajouté à la version 5.4.0.) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 6078
+[21-Jun-2024 11:55:26 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:26 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:54 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:54 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:55 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:55 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:59 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:59 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:59 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:55:59 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:01 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:01 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:01 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:01 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:02 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:02 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:03 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:03 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[21-Jun-2024 11:56:07 UTC] PHP Notice:  ob_end_flush(): Failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\mota-photo\wp-includes\functions.php on line 5420
+[22-Jun-2024 07:48:44 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting "," or ";" in C:\MAMP\htdocs\mota-photo\wp-content\themes\mota-photo\single.php on line 88
