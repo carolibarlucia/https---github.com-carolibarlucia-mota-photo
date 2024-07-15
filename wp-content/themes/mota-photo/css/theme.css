@@ -321,28 +321,28 @@ textarea {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
+  font-family: "Poppins" !important;
 }
 
 .taxonomy {
   display: flex;
   flex-direction: row;
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
   font-size: 12px;
   gap: 20px;
 }
 
 
 
-.taxonomy select {
-  width: 360px;
-  height: 43px;
-  border: #b8bbc2 solid;
+.taxonomy .select2 {
+  width: 360px !important;
+  height: 43px !important;
+  border: #b8bbc2 solid !important;
   border-radius: 8px;
+  font-family: "Poppins" !important;
 }
 
-.select2-container .select2-results__option--highlighted {
-  background-color: red !important;
-}
+
 
 
 .buttonCenter {

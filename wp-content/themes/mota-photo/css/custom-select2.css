@@ -1,8 +1,21 @@
+/* Assurez-vous que le conteneur dropdown a la bonne largeur */
+.select2-container--default .select2-dropdown {
+    width: auto !important; 
+}
+
+/* Garantir que le dropdown soit visible et ne soit pas coupé */
+.select2-dropdown {
+    position: relative !important;
+    z-index: 10000; /* Ajustez ce z-index si nécessaire */
+}
+
+/* Styles personnalisés pour Select2 */
 .select2-container .select2-selection--single {
-    height: auto;
-    padding: 5px;
-  }
-  .select2-container--default
-    .select2-results__option--highlighted[aria-selected] {
-    background-color: red;
-    color: white;}
+    width: 100% !important;
+    height: 40px !important;
+    font-size: 16px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: red !important;
+}

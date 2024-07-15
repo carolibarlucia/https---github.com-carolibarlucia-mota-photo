@@ -2297,3 +2297,23 @@ Stack trace:
 [15-Jul-2024 07:50:43 UTC] Registering select2-js
 [15-Jul-2024 07:50:43 UTC] Registering custom-select2-js
 [15-Jul-2024 07:50:43 UTC] enqueue_custom_styles function called
+[15-Jul-2024 08:37:25 UTC] enqueue_select2 function called
+[15-Jul-2024 08:37:25 UTC] Registering select2-js
+[15-Jul-2024 08:37:25 UTC] Registering custom-select2-js
+[15-Jul-2024 08:37:25 UTC] enqueue_custom_styles function called
+[15-Jul-2024 08:42:15 UTC] enqueue_select2 function called
+[15-Jul-2024 08:42:15 UTC] Registering select2-js
+[15-Jul-2024 08:42:15 UTC] Registering custom-select2-js
+[15-Jul-2024 08:42:15 UTC] enqueue_custom_styles function called
+[15-Jul-2024 08:42:31 UTC] enqueue_select2 function called
+[15-Jul-2024 08:42:31 UTC] Registering select2-js
+[15-Jul-2024 08:42:31 UTC] Registering custom-select2-js
+[15-Jul-2024 08:42:31 UTC] enqueue_custom_styles function called
+[15-Jul-2024 08:43:33 UTC] enqueue_select2 function called
+[15-Jul-2024 08:43:33 UTC] Registering select2-js
+[15-Jul-2024 08:43:33 UTC] Registering custom-select2-js
+[15-Jul-2024 08:43:33 UTC] enqueue_custom_styles function called
+[15-Jul-2024 08:55:55 UTC] enqueue_select2 function called
+[15-Jul-2024 08:55:55 UTC] Registering select2-js from http://localhost/mota-photo/wp-content/themes/mota-photo/js/select2.min.js
+[15-Jul-2024 08:55:55 UTC] Registering custom-select2-js from http://localhost/mota-photo/wp-content/themes/mota-photo/js/custom-select2.js
+[15-Jul-2024 08:55:55 UTC] enqueue_custom_styles function called
