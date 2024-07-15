@@ -1,5 +1,30 @@
 <?php
 
+function enqueue_select2() {
+    error_log('enqueue_select2 function called');
+    // Enregistrer le style Select2
+    wp_enqueue_style('select2-css', get_template_directory_uri() . '/css/select2.min.css', array(), '4.0.13');
+    
+    // Enregistrer le script Select2
+    error_log('Registering select2-js');
+    wp_enqueue_script('select2-js', get_template_directory_uri() . '/js/select2.min.js', array('jquery'), '4.0.13', true);
+    
+    // Enregistrer votre propre script pour initialiser Select2
+    error_log('Registering custom-select2-js');
+    wp_enqueue_script('custom-select2-js', get_template_directory_uri() . '/js/custom-select2.js', array('jquery', 'select2-js'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_select2');
+
+function enqueue_custom_styles() {
+    error_log('enqueue_custom_styles function called');
+    // Charger votre style personnalisé après celui de Select2
+    wp_enqueue_style('custom-select2-styles', get_template_directory_uri() . '/css/custom-select2.css', array('select2-css'), '1.0');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
+
+
+
 function motaphoto_scripts()
 {
     wp_enqueue_script('jquery');
@@ -330,6 +355,4 @@ function lightboxShow()
 add_action('wp_ajax_lightboxShow', 'lightboxShow');
 add_action('wp_ajax_nopriv_lightboxShow', 'lightboxShow');
 
-
-// SLIDER PAGE SINGLE
 

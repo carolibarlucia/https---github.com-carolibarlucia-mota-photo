@@ -81,16 +81,12 @@ get_header();
                         if ($prev_custom_post) {
                             $prev_custom_post_link = get_permalink($prev_custom_post);
                             echo '<a href="' . esc_url($prev_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line2.png" alt="voir la photo précédente" class="arrow-left"/></a>';
-                        } else {
-                            echo '<img src="' . get_template_directory_uri() . '/images/Line2-disabled.png" alt="aucune photo précédente" class="arrow-left disabled"/>';
-                        }
+                        } 
 
                         if ($next_custom_post) {
                             $next_custom_post_link = get_permalink($next_custom_post);
                             echo '<a href="' . esc_url($next_custom_post_link) . '"><img src="' . get_template_directory_uri() . '/images/Line1.png" alt="voir la photo suivante" class="arrow-right"/></a>';
-                        } else {
-                            echo '<img src="' . get_template_directory_uri() . '/images/Line1-disabled.png" alt="aucune photo suivante" class="arrow-right disabled"/>';
-                        }
+                        } 
                         ?>
                     </div>
 

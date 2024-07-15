@@ -206,10 +206,13 @@ jq(document).ready(function () {
   });
   function showMenu() {
     Menu.classList.remove("header-")
+    Menu.classList.add("red")
   }
 
   function hideMenu() {
     Menu.classList.add("header-")
+    Menu.classList.remove("menu-menu-principal-container")
+    
   }
 
   function showCross () {

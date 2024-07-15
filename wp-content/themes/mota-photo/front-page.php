@@ -25,9 +25,9 @@ get_header();
 
     ?>
 </div>
-
+<div class="buttonCenter">
 <button class="chargerPlus" id="load_more" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">Charger plus</button>
-
+</div>
 <?php
 get_footer();
 ?>

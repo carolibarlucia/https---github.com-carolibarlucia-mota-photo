@@ -1,8 +1,8 @@
 <section class="menu-taxonomy">
 	<div class="taxonomy">
 
-		<select id="categorie">
-			<option value="0">CATEGORIE</option>
+		<select id="categorie" class=".select2">
+			<option value="0"  class="select2">CATEGORIE</option>
 			<?php $terms = get_terms(array(
 				'taxonomy' => 'categorie',
 				'hide_empty' => false,
@@ -17,8 +17,8 @@
 
 		</select>
 
-		<select name="format" id="format">
-			<option value="0">FORMAT</option>
+		<select name="format" id="format" class="select2">
+			<option value="0"  class="select2">FORMAT</option>
 			<?php $terms = get_terms(array(
 				'taxonomy' => 'format',
 				'hide_empty' => false,
@@ -35,10 +35,10 @@
 	</div>
 	<div class="taxonomy">
 
-		<select name="date" id="date">
+		<select name="date" id="date" class="select2">
 			<option value="DESC">TRIER PAR</option>
-			<option value="DESC">des plus récentes aux plus anciennes</option>
-			<option value="ASC">des plus anciennes aux plus récentes</option>
+			<option value="DESC" class="select2">des plus récentes aux plus anciennes</option>
+			<option value="ASC" class="select2">des plus anciennes aux plus récentes</option>
 		</select>
 
 	</div>

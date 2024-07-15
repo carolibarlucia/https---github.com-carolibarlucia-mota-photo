@@ -1,0 +1,8 @@
+.select2-container .select2-selection--single {
+    height: auto;
+    padding: 5px;
+  }
+  .select2-container--default
+    .select2-results__option--highlighted[aria-selected] {
+    background-color: red;
+    color: white;}
